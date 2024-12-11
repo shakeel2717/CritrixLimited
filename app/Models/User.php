@@ -236,29 +236,6 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
     }
 
 
-    public function todayNetworkingCap()
-    {
-        return $this->userPlans->where('status', true)->sum(function ($userPlan) {
-            return $userPlan->plan->earning_cap;
-        });
-    }
-
-    public function todayRemainingCap()
-    {
-        if ($this->investment() == 0) return 0;
-        $in = $this->transactions()->where('type', '!=', 'deposit')->where('type', '!=', 'daily profit')->whereDate('created_at', Carbon::today())->where('sum', true)->sum('amount');
-        $out = $this->transactions()->where('type', 'balance adjustment')->whereDate('created_at', Carbon::today())->where('sum', false)->sum('amount');
-        return $this->todayNetworkingCap() - ($in - $out);
-    }
-
-    public function todayAlreadyReceivedCap()
-    {
-        if ($this->investment() == 0) return 0;
-        $in = $this->transactions()->where('type', '!=', 'deposit')->where('type', '!=', 'daily profit')->whereDate('created_at', Carbon::today())->where('sum', true)->sum('amount');
-        $out = $this->transactions()->where('type',  'balance adjustment')->whereDate('created_at', Carbon::today())->where('sum', false)->sum('amount');
-        return $in - $out;
-    }
-
     public function remainingCap()
     {
         if ($this->investment() == 0) return 0;
