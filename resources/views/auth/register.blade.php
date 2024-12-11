@@ -55,6 +55,7 @@
                             placeholder="Enter WhatsApp Number" required aria-describedby="whatsappHelp">
                         <small id="whatsappHelp" class="form-text text-light">
                             Whatsapp format : 6032022XXXX
+                        </small>
                     </div>
 
                     <div class="col-12">
