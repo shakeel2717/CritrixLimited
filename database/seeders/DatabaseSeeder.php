@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'shakeel2717',
             'email' => 'shakeel2717@gmail.com',
             'email_verified_at' => now(),
+            'whatsapp' => '923037702717',
             'password' => bcrypt('asdfasdf'),
         ]);
 
@@ -51,6 +52,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'gojra1@gmail.com',
             'email_verified_at' => now(),
             'referral_id' => $user->id,
+            'whatsapp' => '923037702711',
             'password' => bcrypt('asdfasdf'),
         ]);
 
@@ -69,6 +71,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'gojra2@gmail.com',
             'email_verified_at' => now(),
             'referral_id' => $user->id,
+            'whatsapp' => '923037702712',
             'password' => bcrypt('asdfasdf'),
         ]);
 
@@ -87,6 +90,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'gojra3@gmail.com',
             'email_verified_at' => now(),
             'referral_id' => $user->id,
+            'whatsapp' => '923037702713',
             'password' => bcrypt('asdfasdf'),
         ]);
 
@@ -105,6 +109,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'gojra4@gmail.com',
             'email_verified_at' => now(),
             'referral_id' => $user->id,
+            'whatsapp' => '923037702714',
             'password' => bcrypt('asdfasdf'),
         ]);
 
@@ -123,6 +128,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'gojra5@gmail.com',
             'email_verified_at' => now(),
             'referral_id' => $user->id,
+            'whatsapp' => '923037702715',
             'password' => bcrypt('asdfasdf'),
         ]);
 
@@ -141,6 +147,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'gojra6@gmail.com',
             'email_verified_at' => now(),
             'referral_id' => $user->id,
+            'whatsapp' => '923037702716',
             'password' => bcrypt('asdfasdf'),
         ]);
 

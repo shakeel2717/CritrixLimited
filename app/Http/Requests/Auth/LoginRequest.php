@@ -27,7 +27,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'emailorusername' => ['required', 'string', 'max:255'],
+            'whatsapp' => ['required', 'string', 'numeric'],
             'password' => ['required', 'string'],
         ];
     }
@@ -41,17 +41,11 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        // Determine whether the input is an email or a username
-        $credentials = filter_var($this->input('emailorusername'), FILTER_VALIDATE_EMAIL)
-            ? ['email' => $this->input('emailorusername'), 'password' => $this->input('password')]
-            : ['username' => $this->input('emailorusername'), 'password' => $this->input('password')];
-
-        // Attempt to authenticate
-        if (!Auth::attempt($credentials, $this->boolean('remember'))) {
+        if (! Auth::attempt($this->only('whatsapp', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'emailorusername' => trans('auth.failed'),
+                'whatsapp' => trans('auth.failed'),
             ]);
         }
 
@@ -74,7 +68,7 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
-            'email' => trans('auth.throttle', [
+            'whatsapp' => trans('auth.throttle', [
                 'seconds' => $seconds,
                 'minutes' => ceil($seconds / 60),
             ]),
@@ -86,6 +80,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->string('email')) . '|' . $this->ip());
+        return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
     }
 }
