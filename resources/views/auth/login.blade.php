@@ -16,8 +16,8 @@
                     <input type="tel" name="whatsapp" class="form-control" id="whatsapp"
                         placeholder="Enter WhatsApp Number"  required
                         aria-describedby="whatsappHelp">
-                    <small id="whatsappHelp" class="form-text text-muted">
-                        Include the country code .
+                    <small id="whatsappHelp" class="form-text text-light">
+                        Whatsapp format : 6032022XXXX
                     </small>
                     <div class="invalid-feedback">
                         Please enter a valid WhatsApp number.
