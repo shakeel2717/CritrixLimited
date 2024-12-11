@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tids', function (Blueprint $table) {
+        Schema::create('payment_methods', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->double('amount');
-            $table->string('tid')->unique();
-            $table->enum('status', ['pending', 'approved'])->default('pending');
-            $table->string('screenshot')->nullable();
+            $table->string('name');
+            $table->string('account_title');
+            $table->string('account_number');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tids');
+        Schema::dropIfExists('payment_methods');
     }
 };

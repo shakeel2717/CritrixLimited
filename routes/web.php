@@ -8,6 +8,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NetworkCommissionController;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\TidController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\DepositController;
 use App\Http\Controllers\User\ProfileController;
@@ -25,6 +26,7 @@ Route::post('/deposit/webhook', [DepositController::class, 'webhook'])->name('de
 Route::prefix('user')->name('user.')->middleware('auth', 'verified')->group(function () {
     Route::resource('dashboard', DashboardController::class);
     Route::resource('deposit', DepositController::class);
+    Route::resource('tid', TidController::class);
     Route::resource('checkout', CheckoutController::class);
     Route::resource('plans', PlanController::class);
     Route::resource('withdraw', WithdrawController::class);

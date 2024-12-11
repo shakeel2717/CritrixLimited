@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Payment;
+use App\Models\PaymentMethod;
 use App\Models\Transaction;
 use App\Services\CoinPaymentsService;
 use Illuminate\Http\Request;
@@ -44,24 +45,10 @@ class DepositController extends Controller
             'amount' => 'required|numeric|min:1',
         ]);
 
-        try {
-            $transaction = $this->coinPayments->createTransaction($request->amount, auth()->user()->email);
-            info('Transaction created in Controller: ' . json_encode($transaction));
+        $amount = $request->amount;
 
-            if (isset($transaction['amount'])) {
-                $transaction['user_id'] = auth()->user()->id;
-                // Store transaction details in database
-                $payment = Payment::create($transaction);
-
-                // Redirect to CoinPayments checkout page
-                return to_route('user.checkout.show', ['checkout' => $payment->txn_id]);
-            } else {
-                return back()->withErrors("Transaction creation failed");
-            }
-        } catch (\Exception $e) {
-            info('Transaction creation failed in Controller: ' . $e->getMessage());
-            return back()->withErrors($e->getMessage());
-        }
+        $paymentMethods = PaymentMethod::get();
+        return view('tid.create', compact('paymentMethods', 'amount'));
     }
 
     public function webhook(Request $request)
