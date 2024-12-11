@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('payment_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('user_plan_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('tid_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('withdraw_id')->nullable()->constrained()->cascadeOnDelete();
             $table->double('amount');
             $table->enum('status', ['pending', 'approved', 'failed'])->default('approved');
