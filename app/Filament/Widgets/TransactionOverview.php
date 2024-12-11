@@ -18,9 +18,6 @@ class TransactionOverview extends BaseWidget
             Stat::make('Total Withdraw', Number::currency(Transaction::whereHas('user', function ($query) {
                 $query->where('fake', false);
             })->where('type', 'withdraw')->sum('amount'))),
-            Stat::make('Total KYC Bonus', Number::currency(Transaction::whereHas('user', function ($query) {
-                $query->where('fake', false);
-            })->where('type', 'kyc bonus')->sum('amount'))),
         ];
     }
 }

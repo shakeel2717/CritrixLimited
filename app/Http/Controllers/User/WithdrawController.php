@@ -48,11 +48,7 @@ class WithdrawController extends Controller
             return back()->with('error', 'Minimum withdraw amount is ' . auth()->user()->settings('min_withdraw'));
         }
 
-        // checking if this user has kyc approved
-        if (!auth()->user()->kyc || auth()->user()->kyc->status != 'approved') {
-            return back()->with('error', 'KYC is not approved');
-        }
-
+       
         // checking if this is fake account
         if (auth()->user()->fake) {
             return back()->with('error', 'Not Authorized');
