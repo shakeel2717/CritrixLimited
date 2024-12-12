@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Filament\Notifications\Notification;
 use Filament\Tables\Actions\Action;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class TidResource extends Resource
 {
@@ -110,7 +111,7 @@ class TidResource extends Resource
                 // start user sale to show on upliner account
                 Action::make('viewscreenshot')->label('View Screenshot')->color('success')->action(function (Tid $record) {
                     // redirect user to the screenshot
-                    return redirect($record->screenshot);
+                    return redirect(Storage::url($record->screenshot));
                 }),
             ])
             ->bulkActions([
