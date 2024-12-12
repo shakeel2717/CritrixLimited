@@ -31,6 +31,7 @@ Route::prefix('user')->name('user.')->middleware('auth', 'verified')->group(func
     Route::resource('plans', PlanController::class);
     Route::resource('withdraw', WithdrawController::class);
     Route::resource('transfer', FundTransferController::class);
+    Route::post('/password/update', [ProfileController::class, 'updatePass'])->name('password.update');
     Route::resource('profile', ProfileController::class);
     Route::resource('tree', TreeController::class);
     Route::resource('network', NetworkCommissionController::class);

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class ProfileController extends Controller
 {
@@ -23,6 +25,31 @@ class ProfileController extends Controller
     public function create()
     {
         //
+    }
+
+    public function updatePass(Request $request)
+    {
+        // Validate the request
+        $validated = $request->validate([
+            'current_password' => 'required|string',
+            'new_password' => 'required|string|min:8|confirmed|different:current_password',
+        ]);
+
+        $user = $request->user();
+
+        // Check if the current password matches
+        if (!Hash::check($validated['current_password'], $user->password)) {
+            throw ValidationException::withMessages([
+                'current_password' => ['The current password is incorrect.'],
+            ]);
+        }
+
+        // Update the password
+        $user->update([
+            'password' => Hash::make($validated['new_password']),
+        ]);
+
+        return redirect()->back()->with('status', 'Password updated successfully.');
     }
 
     /**

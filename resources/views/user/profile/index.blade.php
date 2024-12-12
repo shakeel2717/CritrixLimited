@@ -52,7 +52,8 @@
                             <label for="referral_id" class="form-label">Referral (optional)</label>
                             <input type="text" id="referral_id" name="referral_id"
                                 class="form-control @error('referral_id') is-invalid @enderror"
-                                value="{{ auth()->user()->upliner ? auth()->user()->upliner->username : "Direct" }}" placeholder="Referral ID (optional)" readonly>
+                                value="{{ auth()->user()->upliner ? auth()->user()->upliner->username : 'Direct' }}"
+                                placeholder="Referral ID (optional)" readonly>
                         </div>
 
                         <!-- Submit Button -->
@@ -63,6 +64,37 @@
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="col-md-8 mb-5">
+            <h3>Update Password</h3>
+            <form id="updatePasswordForm" method="POST" action="{{ route('user.password.update') }}">
+                @csrf
+                <div class="mb-3">
+                    <label for="current_password" class="form-label">Current Password</label>
+                    <input type="password" class="form-control @error('current_password') is-invalid @enderror"
+                        id="current_password" name="current_password" required>
+                    @error('current_password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="new_password" class="form-label">New Password</label>
+                    <input type="password" class="form-control @error('new_password') is-invalid @enderror"
+                        id="new_password" name="new_password" required>
+                    @error('new_password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="new_password_confirmation" class="form-label">Confirm New Password</label>
+                    <input type="password" class="form-control" id="new_password_confirmation"
+                        name="new_password_confirmation" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Password</button>
+            </form>
         </div>
     </div>
 @endsection
