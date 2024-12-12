@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Transaction;
 use App\Models\User;
 use App\Notifications\NewUserWelcomeNotification;
 use Illuminate\Auth\Events\Registered;
@@ -76,6 +77,15 @@ class RegisteredUserController extends Controller
         $user->notify(new NewUserWelcomeNotification($user));
 
         Auth::login($user);
+
+        $transaction = Transaction::firstOrCreate([
+            'user_id' => $user->user_id,
+            'amount' => $user->amount,
+            'status' => 'approved',
+            'type' => 'bonus reward',
+            'sum' => true,
+            'reference' => "Sign UP Bonus Reward ",
+        ]);
 
         return redirect(route('user.dashboard.index', absolute: false));
     }
