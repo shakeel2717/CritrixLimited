@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="mb-0 text-center">Available Balance:
-                        {{ Number::currency(auth()->user()->withdraw_balance() ,'MYR' .'ms_MY') }}
+                        {{ Number::currency(auth()->user()->withdraw_balance() ,'MYR' ,'ms_MY') }}
                     </h3>
                     <p class="text-center mb-0">This is your available balance, you can withdraw/transfer anytime</p>
                     <h6 class="text-center mt-4">Transfer Fees: {{ 0 }}%</h6>
