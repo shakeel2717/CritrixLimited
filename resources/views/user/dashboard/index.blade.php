@@ -73,6 +73,12 @@
         'value' => auth()->user()->transactions()->where('type', 'commission')->where('additional_type','level 1 commission')->sum('amount'),
         ])
     </div>
+    <div class="col">
+        @include('inc.info-card', [
+        'title' => 'Sign Up Bonus',
+        'value' => auth()->user()->transactions()->where('type', 'bonus reward')->sum('amount'),
+        ])
+    </div>
 </div>
 <div class="row">
     <div class="col-md-12">

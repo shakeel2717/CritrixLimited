@@ -30,7 +30,7 @@ return new class extends Migration
                 'withdraw fees',
                 'transfer',
                 'commission',
-                'kyc bonus',
+                'bonus reward',
                 'reward',
                 'plan activation',
                 'balance adjustment',
