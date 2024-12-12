@@ -65,7 +65,7 @@ class PlanController extends Controller
             'status' => 'approved',
             'type' => 'plan activation',
             'sum' => false,
-            'reference' => $plan->name . " Plan Activation For: " . Number::currency($plan->price),
+            'reference' => $plan->name . " Plan Activation For: " . Number::currency($plan->price ,'MYR' ,'ms_MY'),
         ]);
 
         // if user is not pin
