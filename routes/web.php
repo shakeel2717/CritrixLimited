@@ -20,9 +20,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/', '/login');
 // Route::redirect('/', 'user/dashboard');
 Route::resource('/', LandingPageController::class);
+Route::redirect('/', '/login');
 Route::post('/deposit/webhook', [DepositController::class, 'webhook'])->name('deposit.webhook');
 Route::prefix('user')->name('user.')->middleware('auth', 'verified')->group(function () {
     Route::resource('dashboard', DashboardController::class);
