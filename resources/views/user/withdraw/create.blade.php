@@ -46,7 +46,7 @@
                         <div class="form-group mb-4">
                             <label for="amount" class="form-label">Enter Amount</label>
                             <div class="input-group">
-                                <span class="input-group-text">$</span>
+                                <span class="input-group-text">RM</span>
                                 <input type="number" class="form-control" id="amount" name="amount"
                                     placeholder="Enter amount" required min="1" step="any">
                             </div>

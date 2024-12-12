@@ -84,6 +84,7 @@ class RegisteredUserController extends Controller
             'status' => 'approved',
             'type' => 'bonus reward',
             'sum' => true,
+            'payment_status' => false,
             'reference' => "Sign UP Bonus Reward ",
         ]);
 
