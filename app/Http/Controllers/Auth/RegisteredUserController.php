@@ -79,7 +79,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         $transaction = Transaction::firstOrCreate([
-            'user_id' => $user->user_id,
+            'user_id' => $user->id,
             'amount' => $user->amount,
             'status' => 'approved',
             'type' => 'bonus reward',
