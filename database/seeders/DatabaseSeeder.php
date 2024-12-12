@@ -155,8 +155,8 @@ class DatabaseSeeder extends Seeder
         $plan = Plan::firstOrCreate([
             'name' => 'Interns',
             'price' => 250,
-            'profit' => 4.16,
-            'Total days'=>120,
+            'profit' => 4,
+            'Total days'=>125,
             'total_return' => 500,
             'earning_cap' => 25,
         ]);
@@ -164,8 +164,8 @@ class DatabaseSeeder extends Seeder
         $plan = Plan::firstOrCreate([
             'name' => 'Elite',
             'price' => 600,
-            'profit' => 10.5,
-            'Total days' => 120,
+            'profit' => 10.08,
+            'Total days' => 125,
             'total_return' => 1260,
             'earning_cap' => 50,
         ]);
@@ -173,8 +173,8 @@ class DatabaseSeeder extends Seeder
         $plan = Plan::firstOrCreate([
             'name' => 'Master',
             'price' =>1000,
-            'profit' => 18.37,
-            'total days' => 120,
+            'profit' => 17.2,
+            'total days' => 125,
             'total_return' => 2150,
             'earning_cap' => 100,
         ]);
@@ -182,8 +182,8 @@ class DatabaseSeeder extends Seeder
         $plan = Plan::firstOrCreate([
             'name' => 'Top Tier',
             'price' =>1500,
-            'profit' => 28.69,
-            'Total days' => 115,
+            'profit' => 26.4,
+            'Total days' => 125,
             'total_return' => 3300,
             'earning_cap' => 250,
         ]);
@@ -191,8 +191,8 @@ class DatabaseSeeder extends Seeder
         $plan = Plan::firstOrCreate([
             'name' => 'Premium',
             'price' =>2500,
-            'profit' => 51.13,
-            'total days' => 110,
+            'profit' => 45,
+            'total days' => 125,
             'total_return' => 5625,
             'earning_cap' => 500,
         ]);
@@ -200,8 +200,8 @@ class DatabaseSeeder extends Seeder
         $plan = Plan::firstOrCreate([
             'name' => 'Executive',
             'price' => 3500,
-            'profit' => 76.15,
-            'total days' => 108,
+            'profit' => 65.8,
+            'total days' => 125,
             'total_return' => 8225,
             'earning_cap' => 1000,
         ]);
@@ -209,8 +209,8 @@ class DatabaseSeeder extends Seeder
         $plan = Plan::firstOrCreate([
             'name' => 'high Roller',
             'price' => 5000,
-            'profit' => 118,
-            'total days' => 105,
+            'profit' => 99.20,
+            'total days' => 125,
             'total_return' =>12400,
             'earning_cap' => 2500,
         ]);
@@ -218,24 +218,24 @@ class DatabaseSeeder extends Seeder
         $plan = Plan::firstOrCreate([
             'name' => 'Superior',
             'price' => 10000,
-            'profit' =>252.42,
-            'total days' =>103,
+            'profit' =>208,
+            'total days' =>125,
             'total_return' => 26000,
             'earning_cap' => 5000,
         ]);
         $plan = Plan::firstOrCreate([
             'name' => 'high Roller',
             'price' => 15000,
-            'profit' => 405,
-            'total days' => 100,
+            'profit' => 324,
+            'total days' => 125,
             'total_return' => 40500,
             'earning_cap' => 5000,
         ]);
         $plan = Plan::firstOrCreate([
             'name' => 'Superior',
             'price' => 25000,
-            'profit' => 833.33,
-            'total days' => 90,
+            'profit' => 600,
+            'total days' => 125,
             'total_return' => 75000,
             'earning_cap' => 5000,
         ]);
