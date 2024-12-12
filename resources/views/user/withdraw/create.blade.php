@@ -26,6 +26,12 @@
                             <div class="form-group">
                                 <select name="currency" id="currency" class="form-select">
                                     <option value="USDT.TRC20">USDT (TRC20)</option>
+                                    <option value="Maybank">Maybank</option>
+                                    <option value="RHB Bank">RHB Bank</option>
+                                    <option value="Public Bank">Public Bank</option>
+                                    <option value="TNG eWallet">TNG eWallet</option>
+                                    <option value="DuitNow">DuitNow</option>
+                                    <option value="InstaPay">InstaPay</option>
                                 </select>
                             </div>
                         </div>
