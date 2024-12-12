@@ -36,12 +36,11 @@
                             </div>
                         </div>
                         <div class="form-group mb-4">
-                            <label for="wallet" class="form-label">Your USDT(TRC20) Wallet Address</label>
+                            <label for="wallet" class="form-label">Your Wallet Account Number/Wallet Address</label>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="wallet" name="wallet"
                                     placeholder="Enter wallet address" required>
-                                <small class="form-text text-light">Only USDT(TRC20) addresses are accepted, otherwise you
-                                    may lose your funds.</small>
+                                <small class="form-text text-light">Enter your wallet address or account number</small>
                             </div>
                         </div>
                         <div class="form-group mb-4">
