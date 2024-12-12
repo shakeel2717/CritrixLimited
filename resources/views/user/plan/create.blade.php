@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="mb-0 text-center">Available Balance: {{ Number::currency(auth()->user()->full_balance()) }}
+                    <h3 class="mb-0 text-center">Available Balance: {{ Number::currency(auth()->user()->full_balance() ,'MYR' ,'ms_MY') }}
                     </h3>
                     <p class="text-center mb-0">This is your overall available balance, you can use it to invest</p>
                 </div>

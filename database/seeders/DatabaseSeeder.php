@@ -355,9 +355,16 @@ class DatabaseSeeder extends Seeder
 
         // adding payment method
         $payment_method = new PaymentMethod();
-        $payment_method->name = 'Mobicash';
+        $payment_method->name = 'InstaPay';
         $payment_method->account_title = 'Abid Hameed';
-        $payment_method->account_number = '03031212123';
+        $payment_method->account_number = '+60142885419';
+        $payment_method->save();
+
+        // adding payment method
+        $payment_method = new PaymentMethod();
+        $payment_method->name = 'USDT TRC20';
+        $payment_method->account_title = 'Tether';
+        $payment_method->account_number = 'TNuVMYPRkUt9rzwMp1uHm2p9hZNzpZ4u9N';
         $payment_method->save();
     }
 }
