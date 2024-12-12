@@ -106,7 +106,7 @@
                                 </span>
                             </td>
                             <td class="fw-bold">
-                                {{ $transaction->sum ? '+' : '-' }}{{ Number::currency($transaction->amount) ,'MYR','ms_MY' }}
+                                {{ $transaction->sum ? '+' : '-' }}{{ Number::currency($transaction->amount ,'MYR' ,'ms_MY') }}
                             </td>
                             <td>{{ $transaction->reference }}</td>
                             <td>{{ $transaction->created_at->diffForHumans() }}</td>

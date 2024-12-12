@@ -7,11 +7,11 @@
                 <div class="card-header text-center">
                     <h4 class="">{{ $plan->name }}</h4>
                     <div class="rounded-3 bg-light text-white p-2">
-                        <h1 class="display-1 fw-bold mb-0">${{ Number::abbreviate($plan->price) }}</h1>
+                        <h1 class="display-1 fw-bold mb-0">{{ Number::currency($plan->price ,'MYR' ,'ms_MY') }}</h1>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <p class="text-center mb-4">Are you sure you want to activate {{ $plan->name }} plan for ${{ Number::currency($plan->price ,'MYR' ,'ms_MY') }}?</p>
+                    <p class="text-center mb-4">Are you sure you want to activate {{ $plan->name }} plan for {{ Number::currency($plan->price ,'MYR' ,'ms_MY') }}?</p>
                     <form action="{{ route('user.plans.store') }}" method="POST">
                         @csrf
                         <input type="hidden" name="plan_id" value="{{ $plan->id }}">
