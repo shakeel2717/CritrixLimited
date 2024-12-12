@@ -46,13 +46,13 @@
                     <div class="col-6">
                         <label for="phone" class="form-label">Mobile Number</label>
                         <input type="text" name="phone" class="form-control" id="phone"
-                            placeholder="Enter Mobile Number">
+                            placeholder="Enter Mobile Number" value="60">
                         <small>Mobile number includes country code</small>
                     </div>
                     <div class="col-12">
                         <label for="whatsapp" class="form-label">WhatsApp Number</label>
                         <input type="tel" name="whatsapp" class="form-control" id="whatsapp"
-                            placeholder="Enter WhatsApp Number" required aria-describedby="whatsappHelp">
+                            placeholder="Enter WhatsApp Number" required aria-describedby="whatsappHelp" value="60">
                         <small id="whatsappHelp" class="form-text text-light">
                             Whatsapp format : 6032022XXXX
                         </small>

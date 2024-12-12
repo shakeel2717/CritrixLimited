@@ -15,7 +15,7 @@
                     <label for="whatsapp" class="form-label">WhatsApp Number</label>
                     <input type="tel" name="whatsapp" class="form-control" id="whatsapp"
                         placeholder="Enter WhatsApp Number"  required
-                        aria-describedby="whatsappHelp">
+                        aria-describedby="whatsappHelp" value="60">
                     <small id="whatsappHelp" class="form-text text-light">
                         Whatsapp format : 6032022XXXX
                     </small>
