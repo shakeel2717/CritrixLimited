@@ -153,7 +153,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $plan = Plan::firstOrCreate([
-            'name' => 'Interns',
+            'name' => 'BASIC',
             'price' => 250,
             'profit' => 4,
             'Total days'=>125,
@@ -162,7 +162,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $plan = Plan::firstOrCreate([
-            'name' => 'Elite',
+            'name' => 'STARTER',
             'price' => 600,
             'profit' => 10.08,
             'Total days' => 125,
@@ -171,7 +171,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $plan = Plan::firstOrCreate([
-            'name' => 'Master',
+            'name' => 'ADVANCE',
             'price' =>1000,
             'profit' => 17.2,
             'total days' => 125,
@@ -180,7 +180,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $plan = Plan::firstOrCreate([
-            'name' => 'Top Tier',
+            'name' => 'TRADER',
             'price' =>1500,
             'profit' => 26.4,
             'Total days' => 125,
@@ -189,7 +189,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $plan = Plan::firstOrCreate([
-            'name' => 'Premium',
+            'name' => 'MASTER',
             'price' =>2500,
             'profit' => 45,
             'total days' => 125,
@@ -198,7 +198,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $plan = Plan::firstOrCreate([
-            'name' => 'Executive',
+            'name' => 'ELITE',
             'price' => 3500,
             'profit' => 65.8,
             'total days' => 125,
@@ -207,7 +207,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $plan = Plan::firstOrCreate([
-            'name' => 'high Roller',
+            'name' => 'TYCOON',
             'price' => 5000,
             'profit' => 99.20,
             'total days' => 125,
@@ -216,7 +216,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $plan = Plan::firstOrCreate([
-            'name' => 'Superior',
+            'name' => 'Top Tier',
             'price' => 10000,
             'profit' =>208,
             'total days' =>125,
@@ -224,7 +224,7 @@ class DatabaseSeeder extends Seeder
             'earning_cap' => 5000,
         ]);
         $plan = Plan::firstOrCreate([
-            'name' => 'high Roller',
+            'name' => 'PREMIUM',
             'price' => 15000,
             'profit' => 324,
             'total days' => 125,
