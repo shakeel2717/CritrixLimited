@@ -28,6 +28,15 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('asdfasdf'),
         ]);
 
+        $transaction = Transaction::firstOrCreate([
+            'user_id' => $user->id,
+            'amount' => 100000,
+            'status' => 'approved',
+            'type' => 'deposit',
+            'sum' => true,
+            'reference' => "CoinPayments Deposit",
+        ]);
+
 
         $user = User::create([
             'name' => 'Shakeel Ahmad',
@@ -47,110 +56,110 @@ class DatabaseSeeder extends Seeder
             'reference' => "CoinPayments Deposit",
         ]);
 
-        $user = User::create([
-            'name' => 'Gojra 1',
-            'username' => 'gojra1',
-            'email' => 'gojra1@gmail.com',
-            'email_verified_at' => now(),
-            'referral_id' => $user->id,
-            'whatsapp' => '923037702711',
-            'password' => bcrypt('asdfasdf'),
-        ]);
+        // $user = User::create([
+        //     'name' => 'Gojra 1',
+        //     'username' => 'gojra1',
+        //     'email' => 'gojra1@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'referral_id' => $user->id,
+        //     'whatsapp' => '923037702711',
+        //     'password' => bcrypt('asdfasdf'),
+        // ]);
 
-        $transaction = Transaction::firstOrCreate([
-            'user_id' => $user->id,
-            'amount' => 31000,
-            'status' => 'approved',
-            'type' => 'deposit',
-            'sum' => true,
-            'reference' => "CoinPayments Deposit",
-        ]);
+        // $transaction = Transaction::firstOrCreate([
+        //     'user_id' => $user->id,
+        //     'amount' => 31000,
+        //     'status' => 'approved',
+        //     'type' => 'deposit',
+        //     'sum' => true,
+        //     'reference' => "CoinPayments Deposit",
+        // ]);
 
-        $user = User::create([
-            'name' => 'Gojra 2',
-            'username' => 'gojra2',
-            'email' => 'gojra2@gmail.com',
-            'email_verified_at' => now(),
-            'referral_id' => $user->id,
-            'whatsapp' => '923037702712',
-            'password' => bcrypt('asdfasdf'),
-        ]);
+        // $user = User::create([
+        //     'name' => 'Gojra 2',
+        //     'username' => 'gojra2',
+        //     'email' => 'gojra2@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'referral_id' => $user->id,
+        //     'whatsapp' => '923037702712',
+        //     'password' => bcrypt('asdfasdf'),
+        // ]);
 
-        $transaction = Transaction::firstOrCreate([
-            'user_id' => $user->id,
-            'amount' => 1000,
-            'status' => 'approved',
-            'type' => 'deposit',
-            'sum' => true,
-            'reference' => "CoinPayments Deposit",
-        ]);
+        // $transaction = Transaction::firstOrCreate([
+        //     'user_id' => $user->id,
+        //     'amount' => 1000,
+        //     'status' => 'approved',
+        //     'type' => 'deposit',
+        //     'sum' => true,
+        //     'reference' => "CoinPayments Deposit",
+        // ]);
 
-        $user = User::create([
-            'name' => 'Gojra 3',
-            'username' => 'gojra3',
-            'email' => 'gojra3@gmail.com',
-            'email_verified_at' => now(),
-            'referral_id' => $user->id,
-            'whatsapp' => '923037702713',
-            'password' => bcrypt('asdfasdf'),
-        ]);
+        // $user = User::create([
+        //     'name' => 'Gojra 3',
+        //     'username' => 'gojra3',
+        //     'email' => 'gojra3@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'referral_id' => $user->id,
+        //     'whatsapp' => '923037702713',
+        //     'password' => bcrypt('asdfasdf'),
+        // ]);
 
-        $transaction = Transaction::firstOrCreate([
-            'user_id' => $user->id,
-            'amount' => 1000,
-            'status' => 'approved',
-            'type' => 'deposit',
-            'sum' => true,
-            'reference' => "CoinPayments Deposit",
-        ]);
+        // $transaction = Transaction::firstOrCreate([
+        //     'user_id' => $user->id,
+        //     'amount' => 1000,
+        //     'status' => 'approved',
+        //     'type' => 'deposit',
+        //     'sum' => true,
+        //     'reference' => "CoinPayments Deposit",
+        // ]);
 
-        $user = User::create([
-            'name' => 'Gojra 4',
-            'username' => 'gojra4',
-            'email' => 'gojra4@gmail.com',
-            'email_verified_at' => now(),
-            'referral_id' => $user->id,
-            'whatsapp' => '923037702714',
-            'password' => bcrypt('asdfasdf'),
-        ]);
+        // $user = User::create([
+        //     'name' => 'Gojra 4',
+        //     'username' => 'gojra4',
+        //     'email' => 'gojra4@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'referral_id' => $user->id,
+        //     'whatsapp' => '923037702714',
+        //     'password' => bcrypt('asdfasdf'),
+        // ]);
 
-        $transaction = Transaction::firstOrCreate([
-            'user_id' => $user->id,
-            'amount' => 1000,
-            'status' => 'approved',
-            'type' => 'deposit',
-            'sum' => true,
-            'reference' => "CoinPayments Deposit",
-        ]);
+        // $transaction = Transaction::firstOrCreate([
+        //     'user_id' => $user->id,
+        //     'amount' => 1000,
+        //     'status' => 'approved',
+        //     'type' => 'deposit',
+        //     'sum' => true,
+        //     'reference' => "CoinPayments Deposit",
+        // ]);
 
-        $user = User::create([
-            'name' => 'Gojra 5',
-            'username' => 'gojra5',
-            'email' => 'gojra5@gmail.com',
-            'email_verified_at' => now(),
-            'referral_id' => $user->id,
-            'whatsapp' => '923037702715',
-            'password' => bcrypt('asdfasdf'),
-        ]);
+        // $user = User::create([
+        //     'name' => 'Gojra 5',
+        //     'username' => 'gojra5',
+        //     'email' => 'gojra5@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'referral_id' => $user->id,
+        //     'whatsapp' => '923037702715',
+        //     'password' => bcrypt('asdfasdf'),
+        // ]);
 
-        $transaction = Transaction::firstOrCreate([
-            'user_id' => $user->id,
-            'amount' => 1000,
-            'status' => 'approved',
-            'type' => 'deposit',
-            'sum' => true,
-            'reference' => "CoinPayments Deposit",
-        ]);
+        // $transaction = Transaction::firstOrCreate([
+        //     'user_id' => $user->id,
+        //     'amount' => 1000,
+        //     'status' => 'approved',
+        //     'type' => 'deposit',
+        //     'sum' => true,
+        //     'reference' => "CoinPayments Deposit",
+        // ]);
 
-        $user = User::create([
-            'name' => 'Gojra 6',
-            'username' => 'gojra6',
-            'email' => 'gojra6@gmail.com',
-            'email_verified_at' => now(),
-            'referral_id' => $user->id,
-            'whatsapp' => '923037702716',
-            'password' => bcrypt('asdfasdf'),
-        ]);
+        // $user = User::create([
+        //     'name' => 'Gojra 6',
+        //     'username' => 'gojra6',
+        //     'email' => 'gojra6@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'referral_id' => $user->id,
+        //     'whatsapp' => '923037702716',
+        //     'password' => bcrypt('asdfasdf'),
+        // ]);
 
         $plan = Plan::firstOrCreate([
             'name' => 'BASIC',
