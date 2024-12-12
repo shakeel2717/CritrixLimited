@@ -10,7 +10,7 @@
                     </h3>
                     <p class="text-center mb-0">This is your available balance, you can withdraw/transfer anytime</p>
                     <h6 class="text-center mt-4">Transfer Fees: {{ 0 }}%</h6>
-                    <h6 class="text-center mt-4">Min Transfer: {{ Number::currency(1 ) }}</h6>
+                    <h6 class="text-center mt-4">Min Transfer: {{ Number::currency(1 ,'MYR' ,'ms_MY') }}</h6>
                 </div>
             </div>
         </div>

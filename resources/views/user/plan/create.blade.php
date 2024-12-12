@@ -22,8 +22,8 @@
                     </div>
                     <div class="card-body">
                         <ul class="mb-0 ps-3 list-unstyled d-flex flex-column gap-3">
-                            <li>Daily Return: {{ $plan->profit }}</li>
-                            <li>Total Return: {{ $plan->total_return }}x</li>
+                            <li>Daily Return: {{ Number::currency($plan->profit ,'MYR' ,'ms_MY') }}</li>
+                            <li>Total Return: {{ Number::currency($plan->total_return ,'MYR' ,'ms_MY') }}</li>
                             <li>Instant Deposit / Withdraw</li>
                             <li>24/7 Customer Support</li>
                         </ul>
