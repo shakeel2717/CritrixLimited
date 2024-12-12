@@ -312,43 +312,43 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $networkCommission = new NetworkCommission();
-        $networkCommission->name = 'Trust';
+        $networkCommission->name = 'Associate';
         $networkCommission->business = 1000;
         $networkCommission->reward = 100;
         $networkCommission->save();
 
         $networkCommission = new NetworkCommission();
-        $networkCommission->name = 'Beacon';
+        $networkCommission->name = 'Senior';
         $networkCommission->business = 3000;
         $networkCommission->reward = 300;
         $networkCommission->save();
 
         $networkCommission = new NetworkCommission();
-        $networkCommission->name = 'Haven';
+        $networkCommission->name = 'Manager';
         $networkCommission->business = 10000;
         $networkCommission->reward = 1000;
         $networkCommission->save();
 
         $networkCommission = new NetworkCommission();
-        $networkCommission->name = 'Summit';
+        $networkCommission->name = 'Director';
         $networkCommission->business = 15000;
         $networkCommission->reward = 1500;
         $networkCommission->save();
 
         $networkCommission = new NetworkCommission();
-        $networkCommission->name = 'Noble';
+        $networkCommission->name = 'Senior Director';
         $networkCommission->business = 25000;
         $networkCommission->reward = 2500;
         $networkCommission->save();
 
         $networkCommission = new NetworkCommission();
-        $networkCommission->name = 'Apex';
+        $networkCommission->name = 'President';
         $networkCommission->business = 80000;
         $networkCommission->reward = 8000;
         $networkCommission->save();
 
         $networkCommission = new NetworkCommission();
-        $networkCommission->name = 'Prime';
+        $networkCommission->name = 'Vice President';
         $networkCommission->business = 150000;
         $networkCommission->reward = 15000;
         $networkCommission->save();

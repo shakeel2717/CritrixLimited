@@ -16,8 +16,8 @@
                             @foreach ($networks as $network)
                                 <tr>
                                     <td>{{$network->name}}</td>
-                                    <td>${{number_format($network->business,2)}}</td>
-                                    <td>${{number_format($network->reward,2)}}</td>
+                                    <td>{{ Number::currency($network->business ,'MYR' ,'ms_MY') }}</td>
+                                    <td>{{ Number::currency($network->reward ,'MYR' ,'ms_MY') }}</td>
                                     <td><span class=" fs-3 {{ auth()->user()->netowrkReward($network->reward) ? 'text-white' : 'text-secondary' }}"><i class='bx bx-check-circle'></i></span></td>
                                 </tr>
                             @endforeach
