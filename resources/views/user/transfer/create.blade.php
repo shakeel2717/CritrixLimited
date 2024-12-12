@@ -17,7 +17,7 @@
         <div class="col-md-6 mx-auto">
             <div class="card shadow-sm">
                 <div class="card-header text-center">
-                    <h4>Withdraw Funds</h4>
+                    <h4>Funds Transfer</h4>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('user.transfer.store') }}">
@@ -32,7 +32,7 @@
                         <div class="form-group mb-4">
                             <label for="amount" class="form-label">Enter Amount</label>
                             <div class="input-group">
-                                <span class="input-group-text">$</span>
+                                <span class="input-group-text">MR</span>
                                 <input type="number" class="form-control" id="amount" name="amount"
                                     placeholder="Enter amount" required min="1" step="any">
                             </div>
