@@ -80,7 +80,7 @@ class RegisteredUserController extends Controller
 
         $transaction = Transaction::firstOrCreate([
             'user_id' => $user->id,
-            'amount' => $user->amount,
+            'amount' => 10,
             'status' => 'approved',
             'type' => 'bonus reward',
             'sum' => true,
