@@ -30,10 +30,7 @@
                     <div class="col mx-auto">
                         <div class="mb-4 text-center d-flex justify-content-center">
                             <div>
-                                <img src="/assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-                            </div>
-                            <div>
-                                <h4 class="logo-text">{{ 'Tradex' }}</h4>
+                                <img src="{{asset('logo.png')}}" class="logo-icon" alt="logo icon" style="width: 250px;">
                             </div>
                         </div>
                         <div class="card">
