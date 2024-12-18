@@ -269,7 +269,6 @@
     </script>
     @yield('js')
     @include('inc.alert')
-    <script src="//code.tidio.co/8scsj3wrpwmm7degtswnkxx15bxj2g2n.js" async></script>
 </body>
 
 </html>
