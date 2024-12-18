@@ -38,7 +38,7 @@ class SendWithdrawApprovalNotification extends Notification implements ShouldQue
         return (new MailMessage)
             ->line('Withdrawal Request Approved')
             ->subject('Your Withdrawal Request Approved')
-            ->line('Your withdraw request of ' . Number::currency($this->withdraw->amount) . ' has been approved successfully.')
+            ->line('Your withdraw request of ' . Number::currency($this->withdraw->amount ,'MYR' ,'ms_MY') . ' has been approved successfully.')
             ->action('Go to Dashboard', url('/'))
             ->line('Thank you for using ' . config('app.name'));
     }

@@ -38,7 +38,7 @@ class SendWithdrawRequestNotification extends Notification implements ShouldQueu
         return (new MailMessage)
             ->line('New Withdraw Request')
             ->subject('New Withdraw Request')
-            ->line('Your withdraw request of ' . Number::currency($this->transaction->amount) . ' has been sent successfully. We will process it as soon as possible.')
+            ->line('Your withdraw request of ' . Number::currency($this->transaction->amount ,'MYR' ,'ms_MY') . ' has been sent successfully. We will process it as soon as possible.')
             ->action('Go to Dashboard', url('/'))
             ->line('Thank you for using ' . config('app.name'));
     }

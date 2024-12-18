@@ -36,9 +36,9 @@ class SendTransferFundNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line('Funds Received ' . Number::currency($this->transaction->amount) . ' from ' . $this->from->username)
-            ->subject('You have received a transfer of ' . Number::currency($this->transaction->amount))
-            ->line('You just received a transfer of ' . Number::currency($this->transaction->amount) . ' from ' . $this->from->username)
+            ->line('Funds Received ' . Number::currency($this->transaction->amount ,'MYR' ,'ms_MY') . ' from ' . $this->from->username)
+            ->subject('You have received a transfer of ' . Number::currency($this->transaction->amount ,'MYR' ,'ms_MY'))
+            ->line('You just received a transfer of ' . Number::currency($this->transaction->amount ,'MYR' ,'ms_MY') . ' from ' . $this->from->username)
             ->action('Go to Dashboard', url('/'))
             ->line('Thank you for using ' . config('app.name'));
     }
@@ -47,8 +47,8 @@ class SendTransferFundNotification extends Notification
     {
         return [
             'user_id' => $this->transaction->user->id,
-            'title' => Number::currency($this->transaction->amount) . ' Funds Received',
-            'message' => 'You just received a transfer of ' . Number::currency($this->transaction->amount) . ' from ' . $this->from->username,
+            'title' => Number::currency($this->transaction->amount,'MYR' ,'ms_MY') . ' Funds Received',
+            'message' => 'You just received a transfer of ' . Number::currency($this->transaction->amount,'MYR' ,'ms_MY') . ' from ' . $this->from->username,
         ];
     }
 

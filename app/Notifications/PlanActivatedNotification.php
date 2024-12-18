@@ -37,8 +37,8 @@ class PlanActivatedNotification extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->greeting("Hello, {$this->transaction->user->name}!")
-            ->subject($this->transaction->plan->name . ' Plan of ' . Number::currency($this->transaction->plan->price) . ' Activated Successfully!')
-            ->line("We're excited that you have Activated {$this->transaction->plan->name} Plan of " . Number::currency($this->transaction->plan->price))
+            ->subject($this->transaction->plan->name . ' Plan of ' . Number::currency($this->transaction->plan->price,'MYR' ,'ms_MY') . ' Activated Successfully!')
+            ->line("We're excited that you have Activated {$this->transaction->plan->name} Plan of " . Number::currency($this->transaction->plan->price,'MYR' ,'ms_MY'))
             ->line("If you need any assistance, feel free to reach out!")
             ->action('Visit ' . config('app.name'), url('/'))
             ->line('Thank you for joining us!');
