@@ -13,8 +13,8 @@
                 @csrf
                 <div class="col-12">
                     <label for="login" class="form-label">WhatsApp/Username/Email</label>
-                    <input type="tel" name="login" class="form-control" id="login"
-                        placeholder="Enter WhatsApp Number"  required
+                    <input type="text" name="login" class="form-control" id="login"
+                        placeholder="Enter WhatsApp/Username/Email"  required
                         aria-describedby="whatsappHelp" value="60">
                     <small id="whatsappHelp" class="form-text text-light">
                         Whatsapp format : 6032022XXXX
