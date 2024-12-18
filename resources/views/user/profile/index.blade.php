@@ -47,6 +47,22 @@
                                 value="{{ old('username') ?? auth()->user()->username }}" required readonly>
                         </div>
 
+                        <!-- whatsapp Field -->
+                        <div class="form-group mb-4">
+                            <label for="whatsapp" class="form-label">Whatsapp</label>
+                            <input type="text" id="whatsapp" name="whatsapp"
+                                class="form-control @error('whatsapp') is-invalid @enderror"
+                                value="{{ old('whatsapp') ?? auth()->user()->whatsapp }}" required readonly>
+                        </div>
+
+                        <!-- phone Field -->
+                        <div class="form-group mb-4">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="text" id="phone" name="phone"
+                                class="form-control @error('phone') is-invalid @enderror"
+                                value="{{ old('phone') ?? auth()->user()->phone }}" required readonly>
+                        </div>
+
                         <!-- Referral Field (if applicable) -->
                         <div class="form-group mb-4">
                             <label for="referral_id" class="form-label">Referral (optional)</label>
