@@ -12,8 +12,8 @@
             <form class="row g-3" action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="col-12">
-                    <label for="whatsapp" class="form-label">WhatsApp Number</label>
-                    <input type="tel" name="whatsapp" class="form-control" id="whatsapp"
+                    <label for="login" class="form-label">WhatsApp/Username/Email</label>
+                    <input type="tel" name="login" class="form-control" id="login"
                         placeholder="Enter WhatsApp Number"  required
                         aria-describedby="whatsappHelp" value="60">
                     <small id="whatsappHelp" class="form-text text-light">

@@ -27,7 +27,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'whatsapp' => ['required', 'string', 'numeric'],
+            'login' => ['required', 'string'],
             'password' => ['required', 'string'],
         ];
     }
@@ -41,15 +41,29 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('whatsapp', 'password'), $this->boolean('remember'))) {
-            RateLimiter::hit($this->throttleKey());
+        $input = $this->input('login');
 
-            throw ValidationException::withMessages([
-                'whatsapp' => trans('auth.failed'),
-            ]);
+        // Determine whether the input is an email, username, or WhatsApp number
+        $credentials = [];
+
+        if (filter_var($input, FILTER_VALIDATE_EMAIL)) {
+            // If it's an email
+            $credentials = ['email' => $input, 'password' => $this->input('password')];
+        } elseif (preg_match('/^\+?[1-9]\d{1,14}$/', $input)) {
+            // If it's a WhatsApp number (a basic regex to validate phone number)
+            $credentials = ['whatsapp' => $input, 'password' => $this->input('password')];
+        } else {
+            // Otherwise, treat it as a username
+            $credentials = ['username' => $input, 'password' => $this->input('password')];
         }
 
-        RateLimiter::clear($this->throttleKey());
+        // Attempt to authenticate
+        if (!Auth::attempt($credentials, $this->boolean('remember'))) {
+            RateLimiter::hit($this->throttleKey());
+            throw ValidationException::withMessages([
+                'emailorusername' => trans('auth.failed'),
+            ]);
+        }
     }
 
     /**
@@ -80,6 +94,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
+        return Str::transliterate(Str::lower($this->string('email')) . '|' . $this->ip());
     }
 }
