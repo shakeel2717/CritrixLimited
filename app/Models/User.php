@@ -232,7 +232,7 @@ class User extends Authenticatable implements FilamentUser
     public function networkingCap()
     {
         return $this->userPlans->where('status', true)->sum(function ($userPlan) {
-            return $userPlan->plan->price * $userPlan->plan->total_return;
+            return $userPlan->plan->total_return;
         });
     }
 
