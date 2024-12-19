@@ -240,7 +240,7 @@ class User extends Authenticatable implements FilamentUser
     public function remainingCap()
     {
         if ($this->investment() == 0) return 0;
-        $in = $this->transactions->where('type', '!=', 'deposit')->where('sum', true)->sum('amount');
+        $in = $this->transactions->where('type', '!=', 'deposit')->where('type', '!=', 'transfer')->where('sum', true)->sum('amount');
         $out = $this->transactions->where('type',  'balance adjustment')->where('sum', false)->sum('amount');
         return $this->networkingCap() - ($in - $out);
     }
