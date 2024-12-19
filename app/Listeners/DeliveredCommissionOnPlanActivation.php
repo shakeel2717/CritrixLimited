@@ -45,15 +45,15 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                     //     info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
                     //     // adjusting commission
                     //     $diff = $commission_amount - $upliner->todayRemainingCap();
-                        $diffTransaction = Transaction::firstOrCreate([
-                            'user_id' => $upliner->id,
-                            'user_plan_id' => $event->transaction->userPlan->id,
-                            'amount' => $commission_amount,
-                            'status' => 'approved',
-                            'type' => 'balance adjustment',
-                            'sum' => false,
-                            'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
-                        ]);
+                        // $diffTransaction = Transaction::firstOrCreate([
+                        //     'user_id' => $upliner->id,
+                        //     'user_plan_id' => $event->transaction->userPlan->id,
+                        //     'amount' => $commission_amount,
+                        //     'status' => 'approved',
+                        //     'type' => 'balance adjustment',
+                        //     'sum' => false,
+                        //     'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
+                        // ]);
                     // }
                 } else {
                     info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
@@ -98,18 +98,18 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                         // if ($upliner->todayRemainingCap() >= $commission_amount) {
                         //     info('Daily Cap is not full. sent commission to ' . $upliner->name);
                         // } else {
-                            info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
+                            // info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
                             // adjusting commission
                             // $diff = $commission_amount - $upliner->todayRemainingCap();
-                            $diffTransaction = Transaction::firstOrCreate([
-                                'user_id' => $upliner->id,
-                                'user_plan_id' => $event->transaction->userPlan->id,
-                                'amount' => $commission_amount,
-                                'status' => 'approved',
-                                'type' => 'balance adjustment',
-                                'sum' => false,
-                                'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
-                            ]);
+                            // $diffTransaction = Transaction::firstOrCreate([
+                            //     'user_id' => $upliner->id,
+                            //     'user_plan_id' => $event->transaction->userPlan->id,
+                            //     'amount' => $commission_amount,
+                            //     'status' => 'approved',
+                            //     'type' => 'balance adjustment',
+                            //     'sum' => false,
+                            //     'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
+                            // ]);
                         // }
                     } else {
                         info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
@@ -160,15 +160,15 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                             //     info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
                             //     // adjusting commission
                             //     $diff = $commission_amount - $upliner->todayRemainingCap();
-                                $diffTransaction = Transaction::firstOrCreate([
-                                    'user_id' => $upliner->id,
-                                    'user_plan_id' => $event->transaction->userPlan->id,
-                                    'amount' => $commission_amount,
-                                    'status' => 'approved',
-                                    'type' => 'balance adjustment',
-                                    'sum' => false,
-                                    'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
-                                ]);
+                                // $diffTransaction = Transaction::firstOrCreate([
+                                //     'user_id' => $upliner->id,
+                                //     'user_plan_id' => $event->transaction->userPlan->id,
+                                //     'amount' => $commission_amount,
+                                //     'status' => 'approved',
+                                //     'type' => 'balance adjustment',
+                                //     'sum' => false,
+                                //     'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
+                                // ]);
                             // }
                         } else {
                             info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
@@ -219,15 +219,15 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                                 //     info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
                                 //     // adjusting commission
                                 //     $diff = $commission_amount - $upliner->todayRemainingCap();
-                                    $diffTransaction = Transaction::firstOrCreate([
-                                        'user_id' => $upliner->id,
-                                        'user_plan_id' => $event->transaction->userPlan->id,
-                                        'amount' => $commission_amount,
-                                        'status' => 'approved',
-                                        'type' => 'balance adjustment',
-                                        'sum' => false,
-                                        'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
-                                    ]);
+                                    // $diffTransaction = Transaction::firstOrCreate([
+                                    //     'user_id' => $upliner->id,
+                                    //     'user_plan_id' => $event->transaction->userPlan->id,
+                                    //     'amount' => $commission_amount,
+                                    //     'status' => 'approved',
+                                    //     'type' => 'balance adjustment',
+                                    //     'sum' => false,
+                                    //     'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
+                                    // ]);
                                 // }
                             } else {
                                 info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
@@ -278,15 +278,15 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                                     //     info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
                                     //     // adjusting commission
                                     //     $diff = $commission_amount - $upliner->todayRemainingCap();
-                                        $diffTransaction = Transaction::firstOrCreate([
-                                            'user_id' => $upliner->id,
-                                            'user_plan_id' => $event->transaction->userPlan->id,
-                                            'amount' => $commission_amount,
-                                            'status' => 'approved',
-                                            'type' => 'balance adjustment',
-                                            'sum' => false,
-                                            'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
-                                        ]);
+                                        // $diffTransaction = Transaction::firstOrCreate([
+                                        //     'user_id' => $upliner->id,
+                                        //     'user_plan_id' => $event->transaction->userPlan->id,
+                                        //     'amount' => $commission_amount,
+                                        //     'status' => 'approved',
+                                        //     'type' => 'balance adjustment',
+                                        //     'sum' => false,
+                                        //     'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
+                                        // ]);
                                     // }
                                 } else {
                                     info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
