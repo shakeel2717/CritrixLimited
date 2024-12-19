@@ -39,22 +39,22 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                     info('Overall Cap is not full. sent commission to ' . $upliner->name);
 
                     // checking if this user daily cap is not reached
-                    if ($upliner->todayRemainingCap() >= $commission_amount) {
-                        info('Daily Cap is not full. sent commission to ' . $upliner->name);
-                    } else {
-                        info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
-                        // adjusting commission
-                        $diff = $commission_amount - $upliner->todayRemainingCap();
+                    // if ($upliner->todayRemainingCap() >= $commission_amount) {
+                    //     info('Daily Cap is not full. sent commission to ' . $upliner->name);
+                    // } else {
+                    //     info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
+                    //     // adjusting commission
+                    //     $diff = $commission_amount - $upliner->todayRemainingCap();
                         $diffTransaction = Transaction::firstOrCreate([
                             'user_id' => $upliner->id,
                             'user_plan_id' => $event->transaction->userPlan->id,
-                            'amount' => $diff,
+                            'amount' => $commission_amount,
                             'status' => 'approved',
                             'type' => 'balance adjustment',
                             'sum' => false,
                             'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
                         ]);
-                    }
+                    // }
                 } else {
                     info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
                     // adjusting commission
@@ -95,22 +95,22 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                         info('Overall Cap is not full. sent commission to ' . $upliner->name);
 
                         // checking if this user daily cap is not reached
-                        if ($upliner->todayRemainingCap() >= $commission_amount) {
-                            info('Daily Cap is not full. sent commission to ' . $upliner->name);
-                        } else {
+                        // if ($upliner->todayRemainingCap() >= $commission_amount) {
+                        //     info('Daily Cap is not full. sent commission to ' . $upliner->name);
+                        // } else {
                             info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
                             // adjusting commission
-                            $diff = $commission_amount - $upliner->todayRemainingCap();
+                            // $diff = $commission_amount - $upliner->todayRemainingCap();
                             $diffTransaction = Transaction::firstOrCreate([
                                 'user_id' => $upliner->id,
                                 'user_plan_id' => $event->transaction->userPlan->id,
-                                'amount' => $diff,
+                                'amount' => $commission_amount,
                                 'status' => 'approved',
                                 'type' => 'balance adjustment',
                                 'sum' => false,
                                 'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
                             ]);
-                        }
+                        // }
                     } else {
                         info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
                         // adjusting commission
@@ -154,22 +154,22 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                             info('Overall Cap is not full. sent commission to ' . $upliner->name);
 
                             // checking if this user daily cap is not reached
-                            if ($upliner->todayRemainingCap() >= $commission_amount) {
-                                info('Daily Cap is not full. sent commission to ' . $upliner->name);
-                            } else {
-                                info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
-                                // adjusting commission
-                                $diff = $commission_amount - $upliner->todayRemainingCap();
+                            // if ($upliner->todayRemainingCap() >= $commission_amount) {
+                            //     info('Daily Cap is not full. sent commission to ' . $upliner->name);
+                            // } else {
+                            //     info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
+                            //     // adjusting commission
+                            //     $diff = $commission_amount - $upliner->todayRemainingCap();
                                 $diffTransaction = Transaction::firstOrCreate([
                                     'user_id' => $upliner->id,
                                     'user_plan_id' => $event->transaction->userPlan->id,
-                                    'amount' => $diff,
+                                    'amount' => $commission_amount,
                                     'status' => 'approved',
                                     'type' => 'balance adjustment',
                                     'sum' => false,
                                     'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
                                 ]);
-                            }
+                            // }
                         } else {
                             info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
                             // adjusting commission
@@ -213,22 +213,22 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                                 info('Overall Cap is not full. sent commission to ' . $upliner->name);
 
                                 // checking if this user daily cap is not reached
-                                if ($upliner->todayRemainingCap() >= $commission_amount) {
-                                    info('Daily Cap is not full. sent commission to ' . $upliner->name);
-                                } else {
-                                    info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
-                                    // adjusting commission
-                                    $diff = $commission_amount - $upliner->todayRemainingCap();
+                                // if ($upliner->todayRemainingCap() >= $commission_amount) {
+                                //     info('Daily Cap is not full. sent commission to ' . $upliner->name);
+                                // } else {
+                                //     info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
+                                //     // adjusting commission
+                                //     $diff = $commission_amount - $upliner->todayRemainingCap();
                                     $diffTransaction = Transaction::firstOrCreate([
                                         'user_id' => $upliner->id,
                                         'user_plan_id' => $event->transaction->userPlan->id,
-                                        'amount' => $diff,
+                                        'amount' => $commission_amount,
                                         'status' => 'approved',
                                         'type' => 'balance adjustment',
                                         'sum' => false,
                                         'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
                                     ]);
-                                }
+                                // }
                             } else {
                                 info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
                                 // adjusting commission
@@ -271,23 +271,23 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                                 if ($upliner->remainingCap() >= $commission_amount) {
                                     info('Overall Cap is not full. sent commission to ' . $upliner->name);
 
-                                    // checking if this user daily cap is not reached
-                                    if ($upliner->todayRemainingCap() >= $commission_amount) {
-                                        info('Daily Cap is not full. sent commission to ' . $upliner->name);
-                                    } else {
-                                        info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
-                                        // adjusting commission
-                                        $diff = $commission_amount - $upliner->todayRemainingCap();
+                                    // // checking if this user daily cap is not reached
+                                    // if ($upliner->todayRemainingCap() >= $commission_amount) {
+                                    //     info('Daily Cap is not full. sent commission to ' . $upliner->name);
+                                    // } else {
+                                    //     info('Daily Cap is full. adjusting commission from account: ' . $upliner->name);
+                                    //     // adjusting commission
+                                    //     $diff = $commission_amount - $upliner->todayRemainingCap();
                                         $diffTransaction = Transaction::firstOrCreate([
                                             'user_id' => $upliner->id,
                                             'user_plan_id' => $event->transaction->userPlan->id,
-                                            'amount' => $diff,
+                                            'amount' => $commission_amount,
                                             'status' => 'approved',
                                             'type' => 'balance adjustment',
                                             'sum' => false,
                                             'reference' => 'Networking Daily Cap adjustment from ' . $user->username . ' on ' . $event->transaction->userPlan->plan->name . ' plan activation',
                                         ]);
-                                    }
+                                    // }
                                 } else {
                                     info('Overall Cap is full. adjusting commission from account: ' . $upliner->name);
                                     // adjusting commission
