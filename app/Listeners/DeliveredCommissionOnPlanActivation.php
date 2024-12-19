@@ -27,7 +27,7 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
         // checking if this user has valid upliner
         $user = User::find($event->transaction->user_id);
         // checking if this user has any real deposit
-        if ($user->deposits->sum('amount') > 0) {
+        // if ($user->deposits->sum('amount') > 0) {
             info("User Deposit found for {$user->username} " . $user->deposits->sum('amount'));
             if ($user->upliner) {
                 $upliner = $user->upliner;
@@ -320,8 +320,8 @@ class DeliveredCommissionOnPlanActivation implements ShouldQueue
                     }
                 }
             }
-        } else {
-            info("User Deposit not found for {$user->username} skipping commission delivery");
-        }
+        // } else {
+        //     info("User Deposit not found for {$user->username} skipping commission delivery");
+        // }
     }
 }
