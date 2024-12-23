@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('content')
-
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert bg-light">
+            For any assistance, please contact our support team. <a href="https://wa.me/601161256783"
+                class="alert-link">Contact Now</a>
+        </div>
+    </div>
+</div>
 {{-- @if (auth()->user()->role == 'admin')
         <div class="row">
             <div class="col-md-6 mx-auto">
