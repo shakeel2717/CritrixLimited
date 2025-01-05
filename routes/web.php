@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/', LandingPageController::class);
 Route::redirect('/', '/login');
 Route::post('/deposit/webhook', [DepositController::class, 'webhook'])->name('deposit.webhook');
-Route::prefix('user')->name('user.')->middleware('auth', 'verified')->group(function () {
+Route::prefix('user')->name('user.')->middleware('auth')->group(function () {
     Route::resource('dashboard', DashboardController::class);
     Route::resource('deposit', DepositController::class);
     Route::resource('tid', TidController::class);
