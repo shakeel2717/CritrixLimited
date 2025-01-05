@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <h5 class="card-title">DuitNow QR Code</h5>
-                            <img src="{{ asset('duitnow.jpg') }}" alt="DuitNow" width="200">
+                            <img src="{{ asset('cover.jpg') }}" alt="DuitNow" width="400" class="img-fluid">
                         </div>
                     </div>
                     <p>After sending the payment, please upload the screenshot below and Transaction ID</p>
