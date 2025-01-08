@@ -8,6 +8,11 @@
             </div>
         </div>
         <div class="col-md-12">
+            <div class="alert bg-light text-center">
+                <a href="{{ asset('critrixlimited_1_1.0.apk') }}" class="alert-link">Download Android Application</a>
+            </div>
+        </div>
+        <div class="col-md-12">
             <div class="alert bg-light">
                 For any assistance, please contact our support team. <a href="https://wa.me/601161256783"
                     class="alert-link">Contact Now</a>
