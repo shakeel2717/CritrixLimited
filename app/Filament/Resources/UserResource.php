@@ -47,6 +47,14 @@ class UserResource extends Resource
                     ->required()
                     ->maxLength(255),
 
+                Forms\Components\TextInput::make('phone')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\TextInput::make('whatsapp')
+                    ->required()
+                    ->maxLength(255),
+
                 Forms\Components\Select::make('status')
                     ->required()
                     ->options([
@@ -90,8 +98,8 @@ class UserResource extends Resource
                     ->sortable(),
 
 
-                    ///
-                    Tables\Columns\TextColumn::make('balance')
+                ///
+                Tables\Columns\TextColumn::make('balance')
                     ->label('Balance')
                     ->getStateUsing(function (User $record) {
                         return \Number::currency($record->balance()); // Call your custom method here
